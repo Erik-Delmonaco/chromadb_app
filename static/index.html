@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Vector Documents</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<main class="page">
+			<h1>Stored Documents</h1>
+			<p class="subtitle">Loaded from your existing /documents endpoint.</p>
+
+			<section class="search-panel" aria-label="Semantic search">
+				<form id="search-form" class="search-form">
+					<label for="query-input">Search the collection</label>
+					<div class="search-row">
+						<input
+							id="query-input"
+							type="text"
+							placeholder="Try: space station, music, python..."
+							required
+						/>
+						<button type="submit">Find Top 5</button>
+					</div>
+				</form>
+
+				<div id="search-status" class="status"></div>
+				<section id="search-results" class="documents" aria-live="polite"></section>
+			</section>
+
+			<div id="status" class="status">Loading documents...</div>
+			<section id="documents" class="documents" aria-live="polite"></section>
+		</main>
+
+		<script src="/script.js"></script>
+	</body>
+</html>
