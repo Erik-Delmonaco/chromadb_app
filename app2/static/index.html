@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Chunking Demo</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<main class="container">
+		<h1>Text Chunking Demo</h1>
+		<p class="subtitle">Paste text, choose chunk settings, and see generated chunks with lengths.</p>
+
+		<form id="chunkForm" class="panel">
+			<label for="textInput">Text</label>
+			<textarea
+				id="textInput"
+				name="text"
+				rows="10"
+				placeholder="Type or paste your text here"
+				required
+			></textarea>
+
+			<div class="controls">
+				<div>
+					<label for="chunkSize">Chunk Size</label>
+					<input id="chunkSize" name="chunk_size" type="number" min="1" value="200" required />
+				</div>
+				<div>
+					<label for="chunkOverlap">Chunk Overlap</label>
+					<input id="chunkOverlap" name="chunk_overlap" type="number" min="0" value="20" required />
+				</div>
+			</div>
+
+			<button type="submit">Generate Chunks</button>
+			<p id="error" class="error" aria-live="polite"></p>
+		</form>
+
+		<section class="panel">
+			<h2>Results</h2>
+			<p id="meta" class="meta"></p>
+			<div id="results" class="results"></div>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
